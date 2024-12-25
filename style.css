@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: "Fredoka", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#card {
+    width: 0;
+    height: 0;
+    border-top: 100px solid #ffffff;
+    border-right: 170px solid #dfeaee;
+    border-bottom: 100px solid #ffffff;
+    border-left: 170px solid #dfeaee;
+    box-shadow: 10px 10px 5px #ffffff34;
+}
+
+.heart, .heart1, .heart2, .heart3, .heart4 {
+    width: 32px;
+    height: 32px;
+    background-color: #f84343;
+    position: absolute;
+    transform: rotate(45deg);
+    animation: heartbeat 1.4s infinite;
+}
+
+.heart:before, .heart1:before, 
+.heart2:before, .heart3:before, .heart4:before,
+.heart:after, .heart1:after, .heart2:after, 
+.heart3:after, .heart4:after {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-color: #f84343;
+    border-radius: 50%;
+}
+
+.heart:before, .heart1:before, .heart2:before, .heart3:before, .heart4:before {
+    top: -16px;
+    left: 0;
+}
+
+.heart:after, .heart1:after, .heart2:after, .heart3:after, .heart4:after {
+    left: -16px;
+    top: 0;
+}
+
+@keyframes heartbeat {
+    0%, 25%, 100% { 
+        transform: translate(-50%, -50%) rotate(45deg) scale(1); 
+    }
+    30%, 70% { 
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.4); 
+    }
+    50% { 
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.2); 
+    }
+}
+
+.heart1 {
+    transform: translate(-50%, -160%) rotate(45deg);
+    animation: heart1 2.5s ease-out 1s infinite;
+}
+
+@keyframes heart1 {
+    0% { transform: translateY(-200%) translateX(0) scale(0.25) rotate(45deg); opacity: 1; }
+    100% { transform: translateY(-400%) translateX(0) scale(1) rotate(50deg); opacity: 0; }
+}
+
+.heart2 {
+    transform: translate(-50%, -250%) rotate(45deg);
+    animation: heart2 4s ease-out 1s infinite;
+}
+
+@keyframes heart2 {
+    0% { transform: translateY(-300%) translateX(-100%) scale(0.25) rotate(-20deg); opacity: 0.2; }
+    100% { transform: translateY(-500%) translateX(-10%) scale(1) rotate(45deg); opacity: 0; }
+}
+
+.heart3 {
+    transform: translate(-50%, -350%) rotate(45deg);
+    animation: heart3 2s ease-out 1s infinite;
+}
+
+@keyframes heart3 {
+    0% { transform: translateY(-430%) translateX(-100%) scale(0.25) rotate(20deg); opacity: 0.2; }
+    100% { transform: translateY(-650%) translateX(-10%) scale(1) rotate(60deg); opacity: 0; }
+}
+
+.heart4 {
+    transform: translate(-50%, -450%) rotate(45deg);
+    animation: heart4 2.3s ease-out 1s infinite;
+}
+
+@keyframes heart4 {
+    0% { transform: translateY(-450%) translateX(-100%) scale(0.25) rotate(45deg); opacity: 0.2; }
+    100% { transform: translateY(-750%) translateX(-10%) scale(1) rotate(80deg); opacity: 0; }
+}
+
+.text {
+    text-align: center;
+    color: #dfeaee;
+}
+
+p {
+    font-size: 25px;
+    color: white;
+}
+
+.textHeart {
+    animation: flecha 2s ease-in-out infinite;
+}
+      
+@keyframes flecha{
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        opacity: 0.5;
+        transform: translateX(-10px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(0px);
+    }
+    75% {
+        transform: translateX(10px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.exit-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.exit-button {
+    color: white;
+    font-size: 17px;
+    display: flex;
+    cursor: pointer;
+    text-decoration: none;
+    text-shadow: 0.5px 0.5px 0.5px rgb(0, 0, 0);
+    filter: drop-shadow(2px 2px 7px rgba(255, 255, 255, 0.5));
+}
+
+.exit-button:hover {
+    color: red;
+    text-decoration: none;
+}
+
+
+

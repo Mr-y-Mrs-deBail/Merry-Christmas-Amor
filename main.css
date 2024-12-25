@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+body {
+    background-color: black;
+    font-family: "Fredoka", serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.textCont {
+    font-size: 150%;
+    margin-bottom: 20px;
+}
+
+.textCont::after {
+    content: "|";
+    animation: blinky 1s linear infinite;
+}
+
+@keyframes blinky {
+    0%, 49.9% {
+        opacity: 0;
+    }
+    50%, 99.9% {
+        opacity: 1;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.textCont {
+    font-size: 150%;
+    margin-bottom: 20px;
+}
+
+.textCont::after {
+    content: "|";
+    animation: blinky 1s linear infinite;
+}
+
+@keyframes blinky {
+    0%, 49.9% {
+        opacity: 0;
+    }
+    50%, 99.9% {
+        opacity: 1;
+    }
+}
+
+/* música */
+
+.contenedor01 .player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.contenedor01 .info {
+    height: 80px;
+    margin-top: -10px;
+    opacity: 0;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 15px 5px 110px;
+    border-radius: 25px;
+    transition: all 0.5s ease;
+}
+
+.contenedor01 .info .artist,
+.contenedor01 .info .name {
+    display: block;
+    font-family: "Fredoka", serif;
+}
+
+.contenedor01 .info .artist {
+    color: #222;
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-left: -90px;
+}
+
+.contenedor01 .info .name {
+    color: #4d4646;
+    font-size: 12px;
+    margin-bottom: 8px;
+    margin-left: -15px;
+}
+
+.contenedor01 .progress-bar {
+    background-color: white;
+    width: 90%;
+    height: 4px;
+    position: relative;
+}
+
+.contenedor01 .progress-bar .bar {
+    position: relative;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #5eff1e;
+    width: 0%;
+    height: 100%;
+    transition: width 0.2s linear;
+}
+
+.contenedor01 .info.active {
+    top: -60px;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.control-panel {
+    position: relative;
+    background-color: #816666;
+    border-radius: 15px;
+    width: 250px;
+    height: 75px;
+    z-index: 5;
+    box-shadow: 0 20px 20px 5px rgba(245, 183, 183, 0.3);
+}
+
+.control-panel .album-art {
+    position: absolute;
+    left: 20px;
+    top: -25px;
+    height: 90px;
+    width: 90px;
+    box-shadow: 0 20px 20px 5px rgba(0, 0, 0, 0);
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+
+.img1 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    margin-left: -50px;
+    margin-top: -5px;
+    cursor: pointer;
+}
+
+/* Controles del reproductor */
+
+.control-panel .album-art::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80px;
+}
+
+.control-panel.active .album-art {
+    transform: scale(1.2);
+    transition: all 0.5s ease;
+}
+
+.control-panel .controls {
+    display: flex;
+    justify-content: flex-end;
+    height: 75px;
+    padding: 0 15px;
+}
+
+.control-panel .controls .play {
+    width: 55px;
+    height: auto;
+    border-radius: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    margin: 5px 10px;
+    background-color: #816666;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.control-panel .controls .play:hover {
+    background-color: #928b8b83;
+    transition: background-color 0.3s ease;
+}
+
+.control-panel .controls .play {
+    background-image: url('img/play.png');
+}
+
+.control-panel.active .controls .play {
+    background-image: url('img/stop.png');
+}
+
+.titulo {
+    color: rgba(255, 255, 255, 0.685);
+    font-family: 'Dancing Script', cursive;
+}
